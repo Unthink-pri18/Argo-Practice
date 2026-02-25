@@ -1,0 +1,6 @@
+apiVersion: argoproj.io/aplha1
+kind: Application
+metdata:
+  name: application-01
+spec:
+  destination:
