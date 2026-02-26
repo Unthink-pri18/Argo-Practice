@@ -1,0 +1,11 @@
+repoServer:
+  livenessProbe:
+    initialDelaySeconds: 60    # give it proper time to start
+    periodSeconds: 30          # don't probe too frequently
+    timeoutSeconds: 10         # give it time to respond
+    failureThreshold: 5        # more tolerance before killing
+  readinessProbe:
+    initialDelaySeconds: 30
+    periodSeconds: 30
+    timeoutSeconds: 10
+    failureThreshold: 5

@@ -1,6 +1,19 @@
-apiVersion: argoproj.io/aplha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
-metdata:
-  name: application-01
+metadata:
+  name: application-02
+  namespace: argocd
 spec:
   destination:
+    namespace: default
+    server: https://kubernetes.default.svc 
+  project: default
+  helm:
+    releaseName: application-from-argo
+    parameters:
+      - name: "replicaCount"
+        value: "3"
+  source:
+    path: lecture-03/nginx
+    repoURL: https://github.com/Unthink-pri18/Argo-Practice.git
+    targetRevision: main
