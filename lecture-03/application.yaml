@@ -8,11 +8,11 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc 
   project: default
-  helm:
-    releaseName: application-from-argo
-    parameters:
-      - name: "replicaCount"
-        value: "3"
+  # helm:
+  #   releaseName: application-from-argo
+  #   parameters:
+  #     - name: "replicaCount"
+  #       value: "3"
   source:
     path: lecture-03/nginx
     repoURL: https://github.com/Unthink-pri18/Argo-Practice.git
