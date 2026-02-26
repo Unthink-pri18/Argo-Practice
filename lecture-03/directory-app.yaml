@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-deirectory
+  namespace: argocd
+spec:
+  destination:
+    namespace: directory
+    server: https://kubernetes.default.svc 
+  project: default
+  source:
+    path: lecture-03/manifests
+    repoURL: https://github.com/Unthink-pri18/Argo-Practice.git
+    targetRevision: main

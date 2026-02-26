@@ -1,0 +1,52 @@
+Argo CD is a pull based tool
+
+arcgo cd have a controller in a cluster and pull the latestchanges from the repository and deploy it in the cluster.
+
+
+argocd -> code in the repo(target state) -> kubernetes luster to be deployed(live state)
+
+when synced it becomes in synced -> no difference.
+
+
+when we change a target state the live state becomes outofsync -> there is a difference
+(then argo pulls the change and then it becomes the synced)
+
+
+kubernetes maaintains the repository service to store the cache of our local repo, then applcation  controller is used who compare the chaches from the repository service for any target and ive state difference.
+
+
+Application in argocd:
+
+group of manifests which make up an application, which is also an CRD in kubernetes
+
+
+
+Lecture 2:
+
+installing argo cd:
+1) Non-HAmode : 1 replcas for each component of argo cd
+2) HAmode : multiple replicas for argo component in kubernetes.
+
+
+pods in argocd:
+dex server: for authentication
+argo cd redis: for caching
+argocd repo server: caching repository uses redis pod
+argocd server: if we want to autheticate argocd we use this componnet we use this pod for connection
+it is tls enabled by default.
+secret for argocd:
+
+argocd-initial-admin-secret: password for argocd ui
+
+
+Lecture 3:
+argocd Application:
+application is a group of applocation of manifest files.
+
+e5286-0Nmu2RySB
+e5286-0Nmu2RySB
+e5286-0Nmu2RySBP
+
+argocd login 172.22.0.3:32073 --insecure --grpc-web
+
+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
