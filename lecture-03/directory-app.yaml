@@ -9,6 +9,10 @@ spec:
     server: https://kubernetes.default.svc 
   project: default
   source:
+    directory:
+      # exclude: 'serviceaccount.yaml'
+      # include: '{test.yaml,service.yaml}'
+      rescurse: true    // folder inside path folder like recursicve folders of manifest can also get detected with this
     path: lecture-03/manifests
     repoURL: https://github.com/Unthink-pri18/Argo-Practice.git
     targetRevision: main
